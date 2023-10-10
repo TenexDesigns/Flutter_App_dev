@@ -18,8 +18,8 @@ Using GetX for fetching data when the `http` package works well is a matter of c
 
 2. **Flexibility:** The `http` package provides fine-grained control over HTTP requests and responses. If you have specific requirements that aren't easily met by higher-level libraries like GetX, using `http` directly gives you more flexibility.
 
-3. **Minimal Dependencies:** If you want to keep your project's dependencies to a minimum, using `http` directly can be a good choice. It doesn't introduce additional libraries or packages to your project.
+3. **Minimal Dependencies:** If you want to keep your projects dependencies to a minimum, using `http` directly can be a good choice. It doesn't introduce additional libraries or packages to your project.
 
 4. **Existing Knowledge:** If you're already familiar with using the `http` package and it meets your needs, there may be no compelling reason to switch to GetX for data fetching.
 
-In summary, whether to use GetX for data fetching or stick with the `http` package depends on your project's specific requirements and your preferences. GetX can offer advantages in terms of state management and UI updates, especially if you're using it for other parts of your app. However, if you prefer simplicity, flexibility, and minimal dependencies, using `http` directly may be a suitable choice. Ultimately, both approaches can work effectively, and the decision should align with your project's goals and constraints.
+In summary, whether to use GetX for data fetching or stick with the `http` package depends on your projects specific requirements and your preferences. GetX can offer advantages in terms of state management and UI updates, especially if you're using it for other parts of your app. However, if you prefer simplicity, flexibility, and minimal dependencies, using `http` directly may be a suitable choice. Ultimately, both approaches can work effectively, and the decision should align with your project's goals and constraints.
