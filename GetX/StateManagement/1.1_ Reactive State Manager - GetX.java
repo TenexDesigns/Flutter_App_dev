@@ -17,17 +17,17 @@ class HomeScreen extends StatelessWidget {
 
 
 
-STEP 3 ---------> GetBuilder<CounterController>(
-                      builder: (controller) {  }  to display the item whos state changes, put the widgets that willbe reduilt inside Obx
+STEP 3 --------->  GetX<CounterController>(
+                       builder: (controller) {} to display the item whos state changes, put the widgets that willbe reduilt inside Obx
 
-               GetBuilder<CounterController>(
-                 builder: (controller) {
-                   return Text(
-                     'Count: ${controller.counter.value}',
-                     style: TextStyle(fontSize: 24),
-                   );
-                 },
-               ),
+            GetX<CounterController>(
+              builder: (controller) {
+                return Text(
+                  'Count: ${counterController.counter.value}',   // This is where we accesss and display the data whose state cnages
+                  style: TextStyle(fontSize: 24),
+                );
+              },
+            ),
 
 
 STEP 4 --------> USE THE CREATE CONTROLLER INSTANCE TO ACCESS THE METHODS TO CHANGE THE STATE---> use the counterController instance create in step 2 to access the methods to change the state
@@ -39,25 +39,6 @@ STEP 4 --------> USE THE CREATE CONTROLLER INSTANCE TO ACCESS THE METHODS TO CHA
               },
               child: Text('Increment'),
             ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,43 +68,44 @@ To use GetX for state management in Flutter, you can follow these steps:
 
    In this example, the `CounterController` class extends `GetxController` and defines a single state variable `counter` of type `RxInt`. The `obs` extension is used to make the variable observable. The `increment` method is used to increment the value of `counter`.
 
-4. In your widget, use `GetBuilder` or `GetX` widget to listen to changes in the state and update the UI accordingly:
+4. In your widget, use `GetX` widget to listen to changes in the state and update the UI accordingly:
    ```dart
-   class CounterScreen extends StatelessWidget {
-     final CounterController controller = Get.put(CounterController());
 
-     @override
-     Widget build(BuildContext context) {
-       return Scaffold(
-         appBar: AppBar(
-           title: Text('Counter'),
-         ),
-         body: Center(
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: [
-               GetBuilder<CounterController>(
-                 builder: (controller) {
-                   return Text(
-                     'Count: ${controller.counter.value}',
-                     style: TextStyle(fontSize: 24),
-                   );
-                 },
-               ),
-               SizedBox(height: 16),
-               ElevatedButton(
-                 onPressed: () {
-                   controller.increment();
-                 },
-                 child: Text('Increment'),
-               ),
-             ],
-           ),
-         ),
-       );
-     }
-   }
-   ```
+class CountScreen extends StatelessWidget {
+  final CounterController counterController = Get.put(CounterController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Counter'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GetX<CounterController>(
+              builder: (controller) {
+                return Text(
+                  'Count: ${counterController.counter.value}',
+                  style: TextStyle(fontSize: 24),
+                );
+              },
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                counterController.increment();
+              },
+              child: Text('Increment'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
    In this example, the `CounterScreen` widget uses the `GetBuilder` widget to listen to changes in the `CounterController` state. The `builder` function is called whenever the state changes, and the UI is updated accordingly. The `controller.increment()` method is called when the button is pressed to increment the counter.
 
