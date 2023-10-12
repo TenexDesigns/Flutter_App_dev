@@ -22,7 +22,8 @@ The GetX package in Flutter provides a collection of widgets and tools that simp
    )
    ```
 
-4. `GetBuilder`: This widget allows you to rebuild a part of your widget tree whenever a specific controller's state changes. It's useful for reactive UI updates. Here's an example:
+4. `GetBuilder`: This widget allows you to rebuild a part of your widget tree whenever a specific controllers state changes. 
+   Its useful for reactive UI updates. Here's an example:
 
    ```dart
    GetBuilder<MyController>(
@@ -38,7 +39,8 @@ The GetX package in Flutter provides a collection of widgets and tools that simp
    Get.lazyPut<MyService>(() => MyServiceImpl());
    ```
 
-6. `Get.to` and `Get.off`: These methods are used for navigation. They allow you to navigate to a named route or pop the current route. They simplify navigation in a GetX-based app.
+6. `Get.to` and `Get.off`: These methods are used for navigation. They allow you to navigate to a named route or pop the current route.
+   They simplify navigation in a GetX-based app.
 
    ```dart
    // Navigate to a named route
