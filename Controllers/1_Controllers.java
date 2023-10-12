@@ -1,8 +1,12 @@
-In Flutter, a controller is typically a class used to manage and control the state or behavior of a specific part of your application. Controllers are often used in conjunction with widgets and are responsible for handling user input, business logic, and interactions. Here's a more detailed explanation of what controllers are, what they do, and where and why you might use them, along with code samples.
+In Flutter, a controller is typically a class used to manage and control the state or behavior of a specific part of your application.
+  Controllers are often used in conjunction with widgets and are responsible for handling user input, business logic, and interactions.
+  Here's a more detailed explanation of what controllers are, what they do, and where and why you might use them, along with code samples.
 
 **What Are Controllers in Flutter?**
 
-Controllers are Dart classes that encapsulate logic related to specific widgets or features in your Flutter application. They are often used to handle user input, manage state, and perform business logic. Controllers can be seen as a way to keep your code organized, maintainable, and testable.
+Controllers are Dart classes that encapsulate logic related to specific widgets or features in your Flutter application. 
+  They are often used to handle user input, manage state, and perform business logic. Controllers can be seen as a way to keep your code organized, maintainable,
+  and testable.
 
 **What Do Controllers Do?**
 
@@ -44,7 +48,8 @@ class CounterController extends GetxController {
 }
 ```
 
-In this example, the `CounterController` is responsible for managing the state of a counter. It exposes an observable variable `count` and a method `increment()` to update the count.
+In this example, the `CounterController` is responsible for managing the state of a counter.
+  It exposes an observable variable `count` and a method `increment()` to update the count.
 
 You can use this controller in a widget like this:
 
