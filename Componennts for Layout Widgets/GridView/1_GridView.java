@@ -32,6 +32,7 @@ GridView.count(
 
 ```dart
 GridView.builder(
+  itemCount:10,   // Number of items to be generated
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2, // Number of columns
   ),
