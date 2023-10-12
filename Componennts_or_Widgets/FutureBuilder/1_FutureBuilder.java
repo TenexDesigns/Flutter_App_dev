@@ -1,4 +1,5 @@
-The FutureBuilder widget in Flutter allows you to build a widget based on the latest snapshot of a Future. It is a convenient way to handle asynchronous operations in your Flutter apps.
+The FutureBuilder widget in Flutter allows you to build a widget based on the latest snapshot of a Future. 
+  It is a convenient way to handle asynchronous operations in your Flutter apps.
 
 **Parameters**
 
@@ -10,7 +11,8 @@ The FutureBuilder widget has the following parameters:
 
 **When to use**
 
-You should use the FutureBuilder widget when you need to display a widget based on the latest snapshot of a Future. This can be useful for a variety of tasks, such as:
+You should use the FutureBuilder widget when you need to display a widget based on the latest snapshot of a Future. 
+  This can be useful for a variety of tasks, such as:
 
 * Displaying data that is loaded asynchronously from a network or database.
 * Displaying a loading indicator while asynchronous operations are in progress.
