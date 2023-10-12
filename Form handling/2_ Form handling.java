@@ -89,6 +89,136 @@ You can perform additional validation or handle form submission as needed. This 
 
 
 
+  3. Display Form Validation Errors:
+To display validation errors to the user, you can add a `Text` widget below each `TextFormField` to show the error message returned by the validator function. Here's an updated version of the `_MyFormState` class with error messages:
+
+```dart
+class _MyFormState extends State<MyForm> {
+  final _formKey = GlobalKey<FormState>();
+  String _name = '';
+  String _email = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Name'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _name = value!;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Email'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your email';
+              }
+              if (!value.contains('@')) {
+                return 'Please enter a valid email';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _email = value!;
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                // Access the form data here
+                print('Name: $_name');
+                print('Email: $_email');
+              }
+            },
+            child: Text('Submit'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+4. Display Form Validation Errors:
+To display validation errors to the user, you can add a `Text` widget below each `TextFormField` to show the error message returned by the validator function. Here's an updated version of the `_MyFormState` class with error messages:
+
+```dart
+class _MyFormState extends State<MyForm> {
+  final _formKey = GlobalKey<FormState>();
+  String _name = '';
+  String _email = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Name'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _name = value!;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Email'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your email';
+              }
+              if (!value.contains('@')) {
+                return 'Please enter a valid email';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _email = value!;
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                // Access the form data here
+                print('Name: $_name');
+                print('Email: $_email');
+              }
+            },
+            child: Text('Submit'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+In this updated version, we added a `Text` widget below each `TextFormField` to display the validation error message. The `validator` function returns the error message if the input is invalid, or `null` if the input is valid. The `TextFormField` widget automatically displays the error message when it is not `null`.
+
+You can customize the appearance of the error messages by using the `errorText` property of the `InputDecoration` widget. For example, you can set the `errorText` to the error message returned by the validator function.
+
+That's it! Now you have a basic form with validation in Flutter. You can customize the form fields and validation logic to fit your specific requirements.
+
+
+
+  
+
 
 
 ....
